@@ -48,7 +48,7 @@ def create_frequency_list(file: str):
     Returns a frequency list created using a frequency dictionary produced using the create_frequency_dictionary function.
     """
     frequency_dictionary = create_frequency_dictionary(file)
-    common_nonwords = open_file("C:/Users/Oscar/Documents/NEA/NEA/Data/nonwords.txt")
+    common_nonwords = open_file("Data/nonwords.txt")
     frequency_list = []
     i = -1
     try:
@@ -86,7 +86,7 @@ def find_nouns(freq_list: list):
     Returns a list of all of the nouns from a frequency list.
     """
     nouns = []
-    nouns_list = open_file("C:/Users/Oscar/Documents/NEA/NEA/Data/nouns.txt")
+    nouns_list = open_file("Data/nouns.txt")
     for i in freq_list:
         if i[1] in nouns_list:
             nouns.append(i)
