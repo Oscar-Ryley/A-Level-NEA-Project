@@ -1,5 +1,5 @@
 from sqlite3 import connect
-conn = connect("C:/Users/Oscar/Documents/NEA/NEA/fountain_database.db")
+conn = connect("fountain_database.db")
 cursor = conn.cursor()
 
 class SourceSave:
