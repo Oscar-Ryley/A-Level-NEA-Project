@@ -127,8 +127,8 @@ def webster(query: str):
     Interfaces with a file, merriam-webster_output.txt, in order to save the raw web scrape data.
     Returns the header, link and freq_list of a given webster article's web scrape.
     """
-    header = output_text(get_webster(query), "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/merriam-webster_output.txt")
-    freq_list = create_frequency_list("C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/merriam-webster_output.txt")
+    header = output_text(get_webster(query), "Webscrape_Output/merriam-webster_output.txt")
+    freq_list = create_frequency_list("Webscrape_Output/merriam-webster_output.txt")
     link = get_websterURL(query)
     return header, link, freq_list
 
@@ -184,8 +184,8 @@ def britannica(query: str):
     Also interfaces with a file in order to save the raw data from the web scrape.
     """
     paragraphs, header, link = get_britannica(query)
-    output_any_text(paragraphs, "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/britannica_output.txt")
-    freq_list = create_frequency_list("C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/britannica_output.txt")
+    output_any_text(paragraphs, "Webscrape_Output/britannica_output.txt")
+    freq_list = create_frequency_list("Webscrape_Output/britannica_output.txt")
     return header, link, freq_list
 
 #Dictionary.com - Basic Definition
@@ -220,8 +220,8 @@ def dictionary(query: str):
     Returns the header, link and freq_list from a Dictionary.com search web scrape given a query.
     Also interfaces with a file in order to save the raw data from the web scrape.
     """
-    header = output_text(get_dictionary(query), "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/dictionary_output.txt")
-    freq_list = create_frequency_list("C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/dictionary_output.txt")
+    header = output_text(get_dictionary(query), "Webscrape_Output/dictionary_output.txt")
+    freq_list = create_frequency_list("Webscrape_Output/dictionary_output.txt")
     link = get_dictionaryURL(query)
     return header, link, freq_list
 
@@ -274,8 +274,8 @@ def bitesize(query: str):
     Also interfaces with a file in order to save the raw data from the web scrape.
     """
     paragraphs, header, link = get_bitesize(query)
-    output_any_text(paragraphs, "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/bitesize_output.txt")
-    freqlist = create_frequency_list("C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/bitesize_output.txt")
+    output_any_text(paragraphs, "Webscrape_Output/bitesize_output.txt")
+    freqlist = create_frequency_list("Webscrape_Output/bitesize_output.txt")
     title = purge_tags(header)
     return title, link, freqlist
 
@@ -344,8 +344,8 @@ def wikipedia(query: str):
     Returns the title, link and freq_list from a given wikipedia article based on the parameter search query.
     Also interfaces with a file in order to save the raw data from the web scrape.
     """
-    header = output_text(get_wikipedia(query), "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/wikipedia_output.txt")
-    freq_list = create_frequency_list("C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/wikipedia_output.txt")
+    header = output_text(get_wikipedia(query), "Webscrape_Output/wikipedia_output.txt")
+    freq_list = create_frequency_list("Webscrape_Output/wikipedia_output.txt")
     title = header
     link = get_wikiURL(query)
     return title, link, freq_list
@@ -395,8 +395,8 @@ def sparknotes(query: str):
         sparkextract = text.split("Please wait while we process your payment, Your PLUS subscription has expired, Please wait while we process your payment, ")[1]
     except:
         sparkextract = ""
-    output_any_text(sparkextract, "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/sparknotes_output.txt")
-    freq_list = create_frequency_list("C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/sparknotes_output.txt")
+    output_any_text(sparkextract, "Webscrape_Output/sparknotes_output.txt")
+    freq_list = create_frequency_list("Webscrape_Output/sparknotes_output.txt")
     header = name.strip()
     return header, link, freq_list
 
@@ -456,8 +456,8 @@ def booksummary(query: str):
     Also interfaces with a file in order to save the raw data from the web scrape.
     """
     paragraphs, title, link = get_booksummary(query)
-    output_any_text(paragraphs, "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/booksummary_output.txt")
-    freqlist = create_frequency_list("C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/booksummary_output.txt")
+    output_any_text(paragraphs, "Webscrape_Output/booksummary_output.txt")
+    freqlist = create_frequency_list("Webscrape_Output/booksummary_output.txt")
     return title, link, freqlist
 
 #History.com - Intermediate Source
@@ -510,8 +510,8 @@ def history(query: str):
     Returns the title, link and freqlist for a history.com article given a search query.
     """
     paragraphs, title, link = get_history(query)
-    output_any_text(paragraphs, "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/history_output.txt")
-    freqlist = create_frequency_list("C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/history_output.txt")
+    output_any_text(paragraphs, "Webscrape_Output/history_output.txt")
+    freqlist = create_frequency_list("Webscrape_Output/history_output.txt")
     return title, link, freqlist
 
 ## ARTICLES
@@ -592,7 +592,7 @@ def reuters(query: str):
     while len(reuters_output) != 4:
         try:
             x = 1
-            file = "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/reuters" + str(index+1) + "_output.txt"
+            file = "Webscrape_Output/reuters" + str(index+1) + "_output.txt"
             header, link, paragraphs = get_reuters(articles[index][0], articles[index][1])
             output_any_text(paragraphs, file)
             freq_list = create_frequency_list(file)
@@ -772,7 +772,7 @@ def scholar(query: str):
     scholar_output = []
     num = 1
     for i in scrapable:
-        file = "C:/Users/Oscar/Documents/NEA/NEA/Webscrape_Output/scholar" + str(num) + "_output.txt"
+        file = "Webscrape_Output/scholar" + str(num) + "_output.txt"
         paragraphs, header, link = get_scholar(i[0], i[1])
         output_any_text(paragraphs, file)
         freq_list = create_frequency_list(file)
